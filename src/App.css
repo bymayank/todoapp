@@ -16,7 +16,7 @@
   padding: 20px;
   margin: 20px auto 10px auto;
   background: #ffffff;
-  max-width: 80%;
+  max-width: 65%;
 }
 
 .todo-form{
@@ -34,13 +34,17 @@
 
 
 .top-container {
-  padding-top: 15px;
-  max-width: 600px;
-  background: #f0eded;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 65%;
+  height: auto;
+  min-height: 300px;
+  background: #868686;
   text-align: center;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
 }
 
 .btn-primary {
@@ -49,9 +53,6 @@
   border-radius: 5px;
   background-color: #007bff;
   border-color: #007bff;
-}
-.parent-container{
-  background-color: rgb(51, 153, 153);
 }
 .todo {
   background: #fff;
@@ -67,8 +68,4 @@
 
 .todo:hover{
   background: #dbdbdb;
-}
-
-.todo-text{
-  margin-left:0;
 }

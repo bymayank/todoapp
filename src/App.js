@@ -16,11 +16,12 @@ function App() {
         setTodos(newTodos);
     };
 
-    const editTitle = (index, title) => {
-        const newTodos = [...todos];
-        newTodos[index].text = title;
-        setTodos(newTodos);
-    };
+    const remove = (i) => {
+      const removearr = todos.filter((t, index) => i !== index);
+
+      setTodos(removearr);
+    }
+
 
     return (
       <div className="parent-container">
@@ -28,7 +29,8 @@ function App() {
               <div className="app">
                   <div className="todoform">
                       <List addTodo={addTodo} />
-                      <Todoss todos={todos} markComplete={markComplete} editTitle={editTitle}/>
+                      <Todoss todos={todos} markComplete={markComplete} remove={remove}/>
+
                   </div>
               </div>
           </div>
