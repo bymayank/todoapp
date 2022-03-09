@@ -15,26 +15,24 @@ function App() {
         newTodos[index].isCompleted = !newTodos[index].isCompleted;
         setTodos(newTodos);
     };
+    
 
     const remove = (i) => {
-      const removearr = todos.filter((t, index) => i !== index);
+      const removed = todos.filter((t, index) => i !== index);
 
-      setTodos(removearr);
+      setTodos(removed);
     }
 
 
     return (
-      <div className="parent-container">
+      
           <div className="container top-container">
-              <div className="app">
                   <div className="todoform">
                       <List addTodo={addTodo} />
                       <Todoss todos={todos} markComplete={markComplete} remove={remove}/>
 
                   </div>
-              </div>
           </div>
-      </div>
     );
 }
 

@@ -6,7 +6,7 @@ const Todos = ({todos, markComplete, remove}) => {
                 {
 
                     todos.map((todo, index) => (
-                        <Todo todo={todo} key={index} index={index} markComplete={markComplete} remove={remove}/>
+                        <Todo todo={todo} index={index} markComplete={markComplete} remove={remove}/>
                     ))
                 }
         </div>
