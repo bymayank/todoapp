@@ -24,12 +24,14 @@
   margin: 10px auto 10px auto;
 }
 
+
 .todo-list {
   margin: 0 auto 0 auto;
   background: #e8e8e8;
   border-radius: 4px;
   padding: 5px;
   max-width: 70%;
+
 }
 
 
@@ -38,6 +40,7 @@
   flex-direction: column;
   justify-content: start;
   width: 65%;
+
   height: auto;
   min-height: 300px;
   background: #868686;
