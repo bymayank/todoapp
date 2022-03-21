@@ -1,3 +1,4 @@
+
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import List from "./list";
@@ -7,13 +8,21 @@ function App() {
     const [todos, setTodos] = useState([]);
     
     const addTodo = (todo) => {
-        setTodos([...todos, {text:todo}] );
+      const date=new Date().getMilliseconds();
+        setTodos([...todos, {id:date, text:todo, isCompleted:false}] );
     };
 
-    const markComplete = (index) => {
-        const newTodos = [...todos];
-        newTodos[index].isCompleted = !newTodos[index].isCompleted;
-        setTodos(newTodos);
+    const markComplete = (id) => {
+        let newTodos = todos;
+        const newlist = newTodos.map(task => {
+          if( task.id === id){
+            task.isCompleted = !task.isCompleted;
+            return task;
+          }
+          return task;
+        })
+        // newTodos[index].isCompleted = !newTodos[index].isCompleted;
+        setTodos(newlist);
     };
     const [todoRemaining, setRemaining] = useState(0);
     useEffect(() => { setRemaining(todos.filter(task => !task.isCompleted).length) });

@@ -6,18 +6,18 @@ const Todos = ({todos, markComplete, remove}) => {
                 {
 
                     todos.map((todo, index) => (
-                        <Todo todo={todo} index={index} markComplete={markComplete} remove={remove}/>
+                        <Todo todo={todo} key={todo.id} index={index} markComplete={markComplete} remove={remove}/>
                     ))
                 }
         </div>
     );
 };
 
-const Todo = ({todo, index, markComplete, remove}) =>(
-    <div className="todo">
+const Todo = ({todo,key, index, markComplete, remove}) =>(
+    <div className="todo" >
         <p style={{textDecoration : todo.isCompleted ? "line-through" : ""}}>
             
-            <input type={"checkbox"} onChange={() => markComplete(index)} name={"completed"} id={todo.id}/>{' '}
+            <input type={"checkbox"} onChange={() => markComplete(todo.id)} name={"completed"} id={key}/>{' '}
             {todo.text}
         </p>
         <AiOutlineCloseSquare
